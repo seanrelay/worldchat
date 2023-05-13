@@ -1,14 +1,14 @@
 import { ENVIRONMENT } from "./constants";
 
-export const getEnv = (): "dev" | "production" | "local" => {
+export const getEnv = (): "production" | "dev" | "local" => {
   const envVar = process.env.NEXT_PUBLIC_XMTP_ENVIRONMENT;
-  if (envVar === "production") {
+  if (envVar === "dev") {
     return envVar;
   }
   if (envVar === "local") {
     return envVar;
   }
-  return "dev";
+  return "production";
 };
 
 export const isAppEnvDemo = (): boolean => {
